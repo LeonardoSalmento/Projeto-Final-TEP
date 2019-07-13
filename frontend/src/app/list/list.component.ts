@@ -55,4 +55,10 @@ export class ListComponent implements OnInit {
       )
     );
   }
+
+  logout(){
+    localStorage.removeItem('token');
+    localStorage.removeItem('expires_at');
+    location.reload();
+  }
 }

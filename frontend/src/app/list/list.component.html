@@ -5,7 +5,10 @@
   </div>
   <ul>
     <li *ngFor="let item of projetos">
-      <h2>{{ item.nome }}
+      <h2>{{ item.nome }}-
+      {{ item.status_projeto }} -
+      {{ item.data_prazo }} -
+      {{ item.hora_prazo }} 
       <button (click)="deleteProjeto(item.id)">x</button></h2>
     </li>
   </ul>
@@ -24,7 +27,10 @@
   </div>
   <ul>
     <li *ngFor="let item of tarefas">
-      <h2>{{ item.nome_tarefa }}
+      <h2>{{ item.nome_tarefa }} -
+      {{ item.status_tarefa }} -
+      {{ item.data_prazo }} -
+      {{ item.hora_prazo }} 
       <button (click)="deleteTarefa(item.id)">x</button></h2>
     </li>
   </ul>
