@@ -1,0 +1,40 @@
+<div style="text-align:center">
+    <h1>
+      Lista de Projetos
+    </h1>
+  </div>
+  <ul>
+    <li *ngFor="let item of projetos">
+      <h2>{{ item.nome }}
+      <button (click)="deleteProjeto(item.id)">x</button></h2>
+    </li>
+  </ul>
+
+  <input #itemNome type='text' placeholder='Nome'>
+  <input #itemStatus type='text' placeholder='Status do projeto'>
+  <input #itemDataProjeto type='date' placeholder='Data prazo'>
+  <input #itemHoraProjeto type='time' placeholder='Hora prazo'>
+  <button (click)="addProjeto(itemNome.value, itemDataProjeto.value, itemHoraProjeto.value, itemStatus.value)">Add</button>
+  
+  {{ error?.message }}
+  <div style="text-align:center">
+  <h1>
+      Lista de Tarefas
+    </h1>
+  </div>
+  <ul>
+    <li *ngFor="let item of tarefas">
+      <h2>{{ item.nome_tarefa }}
+      <button (click)="deleteTarefa(item.id)">x</button></h2>
+    </li>
+  </ul>
+  <input #itemNomeTarefa type='text' placeholder='Nome'>
+  <input #itemStatusTarefa type='text' placeholder='Status da tarefa'>
+  <input #itemDataTarefa type='date' placeholder='Data prazo'>
+  <input #itemHoraTarefa type='time' placeholder='Hora prazo'>
+  
+  <button (click)="addTarefa(itemNomeTarefa.value, itemDataTarefa.value, itemHoraTarefa.value, itemStatusTarefa.value)">Add</button>
+  {{ error?.message }}
+  <p *ngIf="error">{{ error?.error | json }}</p>
+
+  <button (click)="logout()">deslogar</button>
